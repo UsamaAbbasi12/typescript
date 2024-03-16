@@ -7,6 +7,9 @@ import Status from "./components/Status";
 import { ChildProcess } from "child_process";
 import ChlidComponent from "./components/ChlidComponent";
 import ReactComponentAsChild from "./components/ReactComponentAsChild";
+import Button from "./components/Button";
+import Input from "./components/Input";
+import Style from "./components/Style";
 function App() {
   const personData = {
     first: "Usama",
@@ -42,6 +45,14 @@ function App() {
       </ReactComponentAsChild>
       {/* Optional Props */}
       <Greet name="Usama" />
+      {/* Passing Event As a Props Means Passing Any Handler Functions  */}
+      <Button handleClick={(event, id) => alert("Hello Usama" + event + id)} />
+      {/* OnChange Event */}
+      <Input value="1" handleChange={(event) => console.log(event)} />
+      {/* Passing Style Props */}
+      <Style
+        styles={{ backgroundColor: "orange", width: "200px", height: "200px" }}
+      />
     </div>
   );
 }
