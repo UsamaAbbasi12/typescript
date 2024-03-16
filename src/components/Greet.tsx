@@ -1,13 +1,10 @@
 import React from "react";
-interface GreetProps {
-  name: string;
-  id?: number;
-}
-const Greet = (props: GreetProps) => {
-  const { id = 10 } = props;
+import { GreetProps } from "../types/Person.types";
+// Destructuring Props
+const Greet = ({ name, id }: GreetProps) => {
   return (
     <div>
-      Greet {props.name} Your id is {id}
+      Greet {name} Your id is {id}
     </div>
   );
 };
